@@ -12,7 +12,12 @@ for number in integer_array:
 
 print(frequencies)
 
-maxValue = max(frequencies.values())
-maxKey = max(frequencies, key=frequencies.get)
+max_value = max(frequencies.values())
+max_keys = set()
+for current_key, current_value in frequencies.items():
+    if max_value == current_value:
+        max_keys.add(str(current_key))
 
-print(f"The most frequenctly occuring integer is {maxKey} which occured {maxValue} times.")
+outputString = ','.join(max_keys)
+
+print(f"The integer/s {outputString} occured {max_value} times.")
